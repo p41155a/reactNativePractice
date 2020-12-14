@@ -21,6 +21,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 
 import AppleListScreen from "./AppleList";
 import AppleDetailScreen from "./AppleDetail";
+import AppleSerchScreen from "./AppleSerch";
 
 const SettingsScreen = () => {
   return (
@@ -34,7 +35,7 @@ const HomeStack = createStackNavigator();
 const HomeNavigation = () => (
   <HomeStack.Navigator>
     <HomeStack.Screen name='HomeScreen' component={AppleListScreen} />
-    <HomeStack.Screen name='DetailScreen' component={AppleDetailScreen} />
+    <HomeStack.Screen name='SerchScreen' component={AppleSerchScreen} />
   </HomeStack.Navigator>
 )
 const Tab = createBottomTabNavigator();
