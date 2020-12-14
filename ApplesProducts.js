@@ -52,14 +52,5 @@ exports.products = [
         price: 359000,
         ssd: "32",
         image: require("./images/appleWatch.jpeg")
-    },
-    {
-        id: 6,
-        name: "Apple Watch SE",
-        size: "40mm",
-        ram: 2,
-        price: 359000,
-        ssd: "32",
-        image: require("./images/appleWatch.jpeg")
     }
 ]

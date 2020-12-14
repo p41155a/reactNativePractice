@@ -36,6 +36,7 @@ const HomeNavigation = () => (
   <HomeStack.Navigator>
     <HomeStack.Screen name='HomeScreen' component={AppleListScreen} />
     <HomeStack.Screen name='SerchScreen' component={AppleSerchScreen} />
+    <HomeStack.Screen name='DetailScreen' component={AppleDetailScreen} />
   </HomeStack.Navigator>
 )
 const Tab = createBottomTabNavigator();
@@ -45,14 +46,20 @@ const App = () => {
        <NavigationContainer>
           <Tab.Navigator>
             <Tab.Screen 
-              name = "Home"
+              name = "제품"
               options={{
                 tabBarIcon: () => (<Ionicons 
-                  name="film-outline" size={28}/>) 
+                  name="logo-apple" size={28}/>) 
               }}
               component={HomeNavigation}
             />
-            <Tab.Screen name = "Settings" component={SettingsScreen} />
+            <Tab.Screen 
+            name = "매장 위치"
+            options={{
+              tabBarIcon: () => (<Ionicons 
+                name="location" size={28}/>) 
+            }}
+            component={SettingsScreen} />
           </Tab.Navigator>
        </NavigationContainer>
     );

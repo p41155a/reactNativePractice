@@ -16,7 +16,7 @@ const AppleProjuctCell = ({product}) => (
         style={{
             flexDirection: 'row',
             height: 160,
-            marginVertical: 8, marginHorizontal: 8,
+            marginVertical: 8,
             borderColor: 'lightgrey',
             borderRadius: 10,
             borderWidth: 2}}>
@@ -37,24 +37,26 @@ const AppleProjuctCell = ({product}) => (
 
 const HomeScreen = ({navigation}) => {
     let [value, setValue] = useState('');
+
+    const showAppleDetail = (product) => {
+        navigation.navigate('DetailScreen', {product: product});
+    }
+
     return (
         <View style={{flex:1, backgroundColor: 'white'}}>
-            <View style={{flex:1, alignItems:'stretch', margin: 16}}>
+            <View style={{flex:1, alignItems:'stretch', marginVertical: 16, marginHorizontal: 24}}>
                 <View style= {{height: 44, alignItems:'stretch', flexDirection:'row', marginBottom: 16}}>
-                    <Image
-                        style={{height: 44, width: 44, marginRight: 16}}
-                        resizeMode='contain'
-                        source={require("./images/appleLogo.png")}
-                    />
                     <TextInput
                         style={{flex:1, height: 40, borderColor: 'gray', borderWidth: 1}}
                         onChangeText={text => {setValue(text)}}
                     />
-                    <Button
-                        color = 'gray'
-                        onPress={() => { navigation.navigate('SerchScreen', {value: value})}}
-                        title="검색"
-                    />
+                    <View style ={{backgroundColor: 'gray', height: 40}}>
+                        <Button
+                            color = 'white'
+                            onPress={() => { navigation.navigate('SerchScreen', {value: value})}}
+                            title="검색"
+                        />
+                    </View>
                 </View>
                 <View>
                 </View>
@@ -64,7 +66,7 @@ const HomeScreen = ({navigation}) => {
                     keyExtractor={(item) => `product=${item.id}`}
                     renderItem={({item}) => (
                         <TouchableHighlight
-                            onPress={() => { showMovieDetail(item) } }
+                            onPress={() => { showAppleDetail(item) } }
                         >
                             <AppleProjuctCell product={item} />
                         </TouchableHighlight>
