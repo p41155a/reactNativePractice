@@ -8,12 +8,7 @@
 
 import React, {useState, useEffect} from 'react';
 import 'react-native-gesture-handler';
-import {
-    Button,
-    View,
-    Text,
-    TextInput
-} from 'react-native';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -22,14 +17,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import AppleListScreen from "./AppleList";
 import AppleDetailScreen from "./AppleDetail";
 import AppleSerchScreen from "./AppleSerch";
-
-const SettingsScreen = () => {
-  return (
-    <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
-      <Text>Setting Screen</Text>
-    </View>
-  )
-}
+import AppleStoreScreen from "./AppleStore";
 
 const HomeStack = createStackNavigator();
 const HomeNavigation = () => (
@@ -59,7 +47,7 @@ const App = () => {
               tabBarIcon: () => (<Ionicons 
                 name="location" size={28}/>) 
             }}
-            component={SettingsScreen} />
+            component={AppleStoreScreen} />
           </Tab.Navigator>
        </NavigationContainer>
     );
